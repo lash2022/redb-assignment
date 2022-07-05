@@ -1,5 +1,6 @@
 import React from 'react'
 import './GetStarted.css'
+import { Link } from 'react-router-dom'
 
 const GetStarted = () => {
   return (
@@ -17,10 +18,12 @@ const GetStarted = () => {
             <span>A LOT ABOUT</span>
             <div className="content">
               <h1 >CHESS SAYS  WHO WE ARE</h1>
+              <Link to={'/form'} className = "links">
               <div className="button-container">
                 <p>Get Started</p>
                 <img src="/photos/Vector2.png" alt="icon" />
               </div>
+              </Link>
             </div>
         </div>
     </div>
