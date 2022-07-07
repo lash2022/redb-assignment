@@ -6,6 +6,15 @@ import './form.css'
 
 export const Form = () => {
   const [step, setStep] = useState(0)
+  const [formData, setFormData] = useState({
+    email: "",
+    number: "",
+    username: '',
+    date_of_birth: "",
+    experience_level: "",
+    already_participated: true,
+    character_id: ''
+  })
   const FormTitles = ['Personal information', 'Chess experience']
   return (
     <div className='form-container'>
@@ -30,15 +39,22 @@ export const Form = () => {
                   <h1>{FormTitles[step]}</h1>
                   <h6>This is basic informaton fields</h6>
                 </div>
-                <div className="body">{step == 0 ? <PersonalInfo/>:<ChessExperience/>}</div>
+                <div className="body">{step == 0 ? <PersonalInfo formData={formData} setFormData ={setFormData}/>
+                :<ChessExperience formData={formData} setFormData ={setFormData}/>}</div>
                 <div className="footer">
                   <button onClick={() => {setStep((currstep) => currstep - 1)}}
                   disabled= {step < 1}>
                    Back
                   </button>
-                  <button onClick={() => {setStep((currstep) => currstep + 1)}}
-                  disabled = {step == FormTitles.length -1}>
-                    Next <FiArrowRightCircle />
+                  <button onClick={() => {
+                    if(step == FormTitles.length -1){
+                      console.log(formData)
+                    }else{
+                      setStep((currstep) => currstep + 1) 
+                    }
+                    }}
+                 >
+                    {step == FormTitles.length -1?'Done':'Next'} <FiArrowRightCircle />
                   </button>
                 </div>
               </div>
