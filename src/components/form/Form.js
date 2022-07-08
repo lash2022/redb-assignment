@@ -11,11 +11,11 @@ export const Form = () => {
   const [formData, setFormData] = useState({
     email: "",
     number: "",
-    username: '',
+    name: '',
     date_of_birth: "",
     experience_level: "",
     already_participated: true,
-    character_id: ''
+    character_id: 1
   })
   
       
@@ -29,8 +29,10 @@ export const Form = () => {
   }, [step])
 
   const submit = (e) => {
+    e.preventDefault()
+
     if (step === 0) {
-      e.preventDefault()
+      
       setStep((currstep) => currstep + 1)
     }
 
@@ -42,11 +44,11 @@ export const Form = () => {
       Axios.post(url,{
         email: formData.email,
         number: formData.number,
-        username: formData.username,
+        name: formData.name,
         date_of_birth: formData.date_of_birth,
         experience_level: formData.experience_level,
         already_participated: formData.already_participated,
-        character_id: valueOf(formData.character_id)
+        character_id:formData.character_id
       })
       .then(res => {
         console.log(res.data)

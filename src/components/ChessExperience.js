@@ -21,16 +21,16 @@ const ChessExperience = ({formData,setFormData}) => {
       <select placeholder='experience_level' name="knowledge" id="knowledge" value={formData.experience_level} 
         onChange = {(e) => setFormData({...formData, experience_level: e.target.value })} > 
         <option value="level">--level of knowledge--</option>
-        <option value="Beginner">Beginner</option>
-        <option value="Intermediate">Intermediate</option>
-        <option value="Profesional">Profesional</option>
+        <option value="beginner">beginner</option>
+        <option value="normal">normal</option>
+        <option value="professional">professional</option>
        </select>
       <label htmlFor="character">Choose your Character</label>
       <select placeholder='Choose your Character' name="character" id="character" value={formData.character_id} 
-        onChange = {(e) => setFormData({...formData, character_id: e.target.value })} > 
+        onChange = {(e) => setFormData({...formData, character_id: parseInt(e.target.value) })} > 
         <option value="character">Choose your character</option>
         {playerData.map((person) => {
-          return <option value={person.id}>{person.name}</option>})
+          return <option value={parseInt(person.id)}>{person.name}</option>})
         }
         
         

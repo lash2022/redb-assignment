@@ -11,8 +11,8 @@ const PersonalInfo = ( {formData,setFormData}) => {
   // onSubmit={handleSubmit(onSubmit)}
   return (
     <div className="personal-container">
-        <input type="text"  name='username' placeholder='Name' value={formData.username} 
-        onChange = {(e) => setFormData({...formData, username: e.target.value })} />
+        <input type="text"  name='name' placeholder='Name' value={formData.name} 
+        onChange = {(e) => setFormData({...formData, name: e.target.value })} />
         <input type="email"  name='email' placeholder='Email address' value={formData.email} 
         onChange = {(e) => setFormData({...formData, email: e.target.value })} />
         <input type="tel"  name='number' placeholder='Phone number ' value={formData.number} 
