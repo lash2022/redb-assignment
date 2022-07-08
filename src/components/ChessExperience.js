@@ -1,6 +1,20 @@
 import React from 'react'
+import { useState, useEffect } from 'react'
+import Axios from 'axios'
 
 const ChessExperience = ({formData,setFormData}) => {
+  const [playerData, setPlayerData] = useState([])
+  
+    useEffect(() => {
+    
+   Axios.get('https://chess-tournament-api.devtest.ge/api/grandmasters')
+      .then(res => {
+        
+        setPlayerData(res.data)
+        console.log(playerData)
+
+      })
+    }, [])
   return (
     <div className="chess-experience-container">
       <label htmlFor="knowledge">Level of Knowledge</label>
@@ -15,9 +29,10 @@ const ChessExperience = ({formData,setFormData}) => {
       <select placeholder='Choose your Character' name="character" id="character" value={formData.character_id} 
         onChange = {(e) => setFormData({...formData, character_id: e.target.value })} > 
         <option value="character">Choose your character</option>
-        <option value="1">1</option>
-        <option value="2">2</option>
-        <option value="3">3</option>
+        {playerData.map((person) => {
+          return <option value={person.id}>{person.name}</option>})
+        }
+        
         
        </select>
        <label htmlFor="radio">Have you participated in the Redberry Championship?</label>
