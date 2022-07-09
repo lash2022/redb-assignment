@@ -1,0 +1,32 @@
+.personal-container{
+    display: flex;
+    flex-direction: column;
+    
+    
+}
+.inputs{
+    margin-bottom: 30px;
+}
+
+.error{
+    color: red;
+    display: none;
+    font-size: 10px;
+}
+
+input:invalid[focus='true'] ~ .error {
+    display: block;
+    
+}
+input:invalid[focuse='true'] ~ .error {
+    display: block;
+    
+}
+input:invalid[focused='true'] ~ .error {
+    display: block;
+    
+}
+input:invalid[focuss='true'] ~ .error {
+    display: block;
+    
+}

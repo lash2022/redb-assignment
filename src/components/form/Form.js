@@ -10,23 +10,23 @@ export const Form = () => {
   const [step, setStep] = useState(0)
   const [formData, setFormData] = useState({
     email: "",
-    number: "",
+    phone: "",
     name: '',
     date_of_birth: "",
     experience_level: "",
     already_participated: true,
-    character_id: 1
+    character_id: ''
   })
   
-      
+  
 
     
   
   
 
-  useEffect(() => {
-    console.log(step)
-  }, [step])
+  // useEffect(() => {
+  //   console.log(step)
+  // }, [step])
 
   const submit = (e) => {
     e.preventDefault()
@@ -43,7 +43,7 @@ export const Form = () => {
       console.log(formData)
       Axios.post(url,{
         email: formData.email,
-        number: formData.number,
+        phone: formData.phone,
         name: formData.name,
         date_of_birth: formData.date_of_birth,
         experience_level: formData.experience_level,
@@ -54,9 +54,17 @@ export const Form = () => {
         console.log(res.data)
       })
     }
+   }
+   useEffect(() => {
+    window.localStorage.setItem('anti-refresh-datas', JSON.stringify(formData))
+    
+  })  
+  useEffect(() => {
+    const localFormData = window.localStorage.getItem('anti-refresh-datas')
+    
+    setFormData(JSON.parse(localFormData))
+   },[])
 
-   
-  }
   const FormTitles = ['Personal information', 'Chess experience']
   return (
     <div className='form-container'>
