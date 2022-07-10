@@ -58,7 +58,9 @@ export const Form = () => {
   useEffect(() => {
     localStorage.setItem('anti-refresh-datas', JSON.stringify(formData))
   }, [formData])
- 
+  if(subbed === true) {
+    localStorage.removeItem('anti-refresh-datas')
+  }
   const FormTitles = ['Personal information', 'Chess experience']
   return (
     <>
@@ -70,6 +72,14 @@ export const Form = () => {
           <h3> Redberry Knight Cup</h3>
         </div>
         <img className='chess--img'  src={step === 0 ? "/photos/unsplash.png" : "/photos/unspl.png"} alt="landing" />
+        <div className="quote-container">
+          <p>{step === 0 ? `“When you see a good move, look for a better one.”` 
+          : `“Many have become chess masters; 
+          no one has become the master of chess.”`}</p>
+          <h3 style={step === 0 ? {color: "#E5E6E8"} 
+          : {color: "#093F68", textAlign: "end"} }
+          >{step === 0 ?'-Emanuel Lasker' : "- Siegbert Tarrasch "}</h3>
+        </div>
       </div>
       <div className="right--container">
         <div className="form">
