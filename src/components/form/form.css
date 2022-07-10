@@ -44,6 +44,29 @@
 .chess--img{
     height: 90vh;
 }
+.quote-container{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    font-family: 'Nunito';
+    text-transform: uppercase;
+    font-style: italic;
+    width: 31.8%;
+}
+.quote-container p {
+    font-size: 26px;
+    font-weight: 800;
+    color: ;
+    
+
+}
+.quote-container h3 {
+    
+    font-size: 24px;
+    font-weight: 400;
+    
+    
+}
 
 .form{
     display: flex;
