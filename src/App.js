@@ -1,9 +1,9 @@
 import GetStarted from './components/GetStarted/GetStarted'
 import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-
-import './App.css';
 import { Form } from './components/form/Form';
+import './App.css';
 
+  
 function App() {
   return (
     <>

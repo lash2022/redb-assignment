@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import { FiArrowRightCircle } from "react-icons/fi";
 import PersonalInfo from '../PersonalInfo';
 import ChessExperience from '../ChessExperience'
 import Axios from 'axios';
@@ -78,7 +77,9 @@ export const Form = () => {
             <p>{step === 0? 'Start creating your account' :'First step is done, continue to finish onboarding'}</p>
           </div>
           <div className="progressbar">
-            <p>progressbar</p>
+            <p>{step === 0 ? step + 1 : <img src='photos/tick.png'/>}</p>
+            <img className='span' src="/photos/Line 3.png" alt="" />
+            <p>{step === 0 ? 2 : step + 1}  </p>
           </div>
           <div className="small-form-container">
             <div className="header">

@@ -65,9 +65,27 @@
     
 }
 .progressbar{
-    
+    display: flex;
     height: 100px;
     padding-left: 30px;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    font-family: 'Open Sans';
+    color: #95939A;
+}
+.progressbar p {
+    background-color: #E5E6E8;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+    padding-top: 15px;
+    border-radius: 8px;
+}
+.progressbar .span{
+    width: 100px;
+    height: 2px;
+    
 }
 .small-form-container{
     margin-top: 80px;
@@ -102,7 +120,7 @@
     font-family: 'Open Sans';
 }
 .decrement{
-    
+    background-color: white;
     border: 1px solid rgba(0, 0, 0, 0.125);
     width: 90px;
 }
@@ -112,3 +130,11 @@
     width: 128px;
 }
 
+.decrement:hover{
+    background-color: #F5F5f5;
+}
+
+.increment:hover{
+    border: 3px solid rgb(215, 126, 215);
+
+}
