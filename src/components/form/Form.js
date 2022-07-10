@@ -3,7 +3,7 @@ import PersonalInfo from '../PersonalInfo';
 import ChessExperience from '../ChessExperience'
 import Axios from 'axios';
 import './form.css'
-import Grats from '../Grats';
+import Grats from '../Grats/Grats.js';
 
 export const Form = () => {
   const url = "https://chess-tournament-api.devtest.ge/api/register"
@@ -20,9 +20,7 @@ export const Form = () => {
   const [subbed,setSubbed] = useState(false)
 
  
-  // useEffect(() => {
-  //   console.log(step)
-  // }, [step])
+ 
 
   const submit = (e) => {
     e.preventDefault()
@@ -34,9 +32,6 @@ export const Form = () => {
 
     if (step === 1) {
       e.preventDefault();
-
-      console.log("form submitted")
-      console.log(formData)
       Axios.post(url, {
         email: formData.email,
         phone: formData.phone,
@@ -87,9 +82,15 @@ export const Form = () => {
             <p>{step === 0? 'Start creating your account' :'First step is done, continue to finish onboarding'}</p>
           </div>
           <div className="progressbar">
-            <p>{step === 0 ? step + 1 : <img src='photos/tick.png'/>}</p>
+            <div className="pr-bar-container">
+              <p style={step === 0 || 1 ? {backgroundColor: '#E9FAF1'} : {backgroundColor: '#white'} }>{step === 0 ? step + 1 : <img src='photos/tick.png'/>}</p>
+              <h6>Personal information</h6>
+            </div>
             <img className='span' src="/photos/Line 3.png" alt="" />
-            <p>{step === 0 ? 2 : step + 1}  </p>
+            <div className="pr-bar-container">
+            <p style={step === 1 ? {backgroundColor: '#E9FAF1'} : {backgroundColor: '#E5E6E8'} }>{step === 0 ? 2 : step + 1}  </p>
+            <h6>Chess experience</h6>
+            </div>
           </div>
           <div className="small-form-container">
             <div className="header">

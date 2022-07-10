@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import "./PersonalInfo.css"
+import "./inputStyles.css"
 
 
 const PersonalInfo = ( {formData,setFormData}) => {

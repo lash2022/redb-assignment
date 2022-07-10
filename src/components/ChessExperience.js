@@ -1,7 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import Axios from 'axios'
-import './PersonalInfo.css'
+import './inputStyles.css'
 
 const ChessExperience = ({formData,setFormData}) => {
   const [playerData, setPlayerData] = useState([])
@@ -10,10 +10,8 @@ const ChessExperience = ({formData,setFormData}) => {
     
    Axios.get('https://chess-tournament-api.devtest.ge/api/grandmasters')
       .then(res => {
-        
         setPlayerData(res.data)
-        console.log(playerData)
-
+      
       })
     }, [])
   return (
@@ -43,12 +41,12 @@ const ChessExperience = ({formData,setFormData}) => {
           <div className="radio-inputs-container">
             <div className="radio-inputs">
               <input type="radio"name= "radio" value={formData.already_participated} 
-              onChange = {(e) => setFormData({...formData, already_participated: true })}  autoFocus/>
+              onChange = {(e) => setFormData({...formData, already_participated: true })} required autoFocus/>
               <label>Yes</label>
             </div>
             <div className="radio-inputs">
               <input type="radio"name= "radio" value={!formData.already_participated} 
-              onChange = {(e) => setFormData({...formData, already_participated: false })} />
+              onChange = {(e) => setFormData({...formData, already_participated: false })} required/>
               <label>No</label>
             </div>
           </div>

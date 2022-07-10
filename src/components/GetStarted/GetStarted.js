@@ -6,8 +6,7 @@ const GetStarted = () => {
   return (
     <div className='container'>
         <div className="left-container">
-          
-            <img className='first-rec' src="/photos/Rectangle.png" alt="rec" />
+          <img className='first-rec' src="/photos/Rectangle.png" alt="rec" />
             <div className="left-cont-title">
               <img src='/photos/Vector.png' alt='king' />
               <h3> Redberry Knight Cup</h3>
