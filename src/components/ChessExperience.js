@@ -35,16 +35,23 @@ const ChessExperience = ({formData,setFormData}) => {
         {playerData.map((person) => {
           return <option value={parseInt(person.id)}>{person.name} </option>})
         }
-        </select>
+        </select><br />
         
-       <label htmlFor="radio">Have you participated in the Redberry Championship?</label>
+       
         <div className="yes-no" id="radio" required>
-          <input type="radio"name= "radio" value={formData.already_participated} 
-          onChange = {(e) => setFormData({...formData, already_participated: true })}  autoFocus/>
-          <label>Yes</label>
-          <input type="radio"name= "radio" value={!formData.already_participated} 
-          onChange = {(e) => setFormData({...formData, already_participated: false })} />
-          <label>No</label>
+          <p>Have you participated in the Redberry Championship?</p>
+          <div className="radio-inputs-container">
+            <div className="radio-inputs">
+              <input type="radio"name= "radio" value={formData.already_participated} 
+              onChange = {(e) => setFormData({...formData, already_participated: true })}  autoFocus/>
+              <label>Yes</label>
+            </div>
+            <div className="radio-inputs">
+              <input type="radio"name= "radio" value={!formData.already_participated} 
+              onChange = {(e) => setFormData({...formData, already_participated: false })} />
+              <label>No</label>
+            </div>
+          </div>
         </div>
     </div>
   )

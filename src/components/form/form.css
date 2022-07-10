@@ -15,7 +15,7 @@
     width: 50%;
     height: 100%;
     display: flex;
-    
+    background-color: white;;
     
 }
 .first--rec{
@@ -44,3 +44,71 @@
 .chess--img{
     height: 90vh;
 }
+
+.form{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    
+    
+}
+.first-paragraph {
+    height: calc(10vh - 1px);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.first-paragraph p {
+   padding-left: 30px;
+   font-family: 'Open Sans';
+    
+}
+.progressbar{
+    
+    height: 100px;
+    padding-left: 30px;
+}
+.small-form-container{
+    margin-top: 80px;
+}
+.header {
+    font-family: 'Open Sans';
+    padding-left: 30px;
+}
+.header h1{
+    margin-bottom: 0;
+}
+.header h6{
+    margin-top: 0;
+    font-weight: 200;
+    font-size: 14px;
+    color: #95939A;
+}
+.buttons{
+    width: 86.5%;
+    padding-left: 30px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    font-size: 20px;
+}
+.button{
+    height: 53px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Open Sans';
+}
+.decrement{
+    
+    border: 1px solid rgba(0, 0, 0, 0.125);
+    width: 90px;
+}
+.increment{
+    background-color: black;
+    color: white;
+    width: 128px;
+}
+
